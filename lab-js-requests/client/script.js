@@ -217,3 +217,28 @@ document.querySelector('#query-button').addEventListener('click', query);
 */
 
 // CODE HERE 
+const foodBtn = document.querySelector('#submit')
+
+const createFood = event => {
+    event.preventDefault();
+    const foodInput = document.querySelector('input');
+    let body = {
+        newFood: foodInput.value
+    }
+    axios.post(baseURL + '/food', body)
+    .then((response) => {
+        console.log(response.data);
+        for(let i = 0; i < response.data.length; i++) {
+            let text = document.createElement('li');
+            text.textContent = response.data[i];
+            document.querySelector('ul').appendChild(text);
+        }
+    })
+}
+
+const deleteFood = event => {
+    
+}
+
+foodBtn.addEventListener('click', createFood);
+
