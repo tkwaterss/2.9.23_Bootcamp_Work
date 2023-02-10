@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Requests in JS lab!</title>
+    <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
     <script src="./script.js" defer></script>
     <style>
@@ -19,16 +20,23 @@
     </style>
 </head>
 <body>
-    <button id='say-hello-button'>say hello!</button>
-    <button id='animals-button'>oh my!</button>
-    <button id='repeat-button'>repeat my param</button>
-    <button id='query-button'>send a query</button>
-    <p id='hello-text'>Hello World!</p>
-    <p id='repeat-text'></p>
-    <form>
-        <input type="text" placeholder="enter a food">
-        <button id="submit" type="submit">Add Food to List</button>
-    </form>
-    <ul></ul>
+    <header>
+        <section>
+            <button id='say-hello-button'>say hello!</button>
+            <button id='animals-button'>oh my!</button>
+            <button id='repeat-button'>repeat my param</button>
+            <button id='query-button'>send a query</button>
+        </section>
+        <p id='hello-text'>Hello World!</p>
+        <p id='repeat-text'></p>
+    </header>
+    <footer>
+        <form>
+            <input type="text" placeholder="Enter a Food">
+            <button id="submit" type="submit">Add Food</button>
+            <ul>
+            </ul>
+        </form>
+    </footer>
 </body>
 </html>

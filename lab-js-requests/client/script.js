@@ -38,7 +38,7 @@ sayHelloButton.addEventListener('mouseover', changeColor);
 
 // CODE HERE
 const returnColor = evt => {
-    sayHelloButton.style.backgroundColor = '#EFEFEF';
+    sayHelloButton.style.backgroundColor = '#daa23a';
     sayHelloButton.style.color = 'black';
 }
 
@@ -232,12 +232,19 @@ const createFood = event => {
             let text = document.createElement('li');
             text.textContent = response.data[i];
             document.querySelector('ul').appendChild(text);
+            const deleteBtn = document.createElement('button');
+            deleteBtn.textContent = 'X';
+            deleteBtn.addEventListener('click', deleteFood);
+            text.appendChild(deleteBtn);
         }
     })
+    
 }
 
 const deleteFood = event => {
-    
+    event.target.parentNode.remove();
+    axios.remove(baseURL + '/food')
+
 }
 
 foodBtn.addEventListener('click', createFood);
